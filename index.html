@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mana Oori Ruchulu - Authentic Indian Village Cuisine</title>
+    <meta name="description" content="Experience authentic Indian village cuisine at Mana Oori Ruchulu with both vegetarian and non-vegetarian options in a traditional rustic ambiance.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Rozha+One&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header and Navigation -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h1>Mana Oori Ruchulu</h1>
+                <p class="tagline">Authentic Indian Village Cuisine</p>
+            </div>
+            
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
+            </button>
+            
+            <nav id="primary-navigation">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">Our Story</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <div class="decorative-border-top"></div>
+                <h2>Experience the Taste of <span class="highlight">Indian Village</span></h2>
+                <p>Traditional recipes crafted with love and authentic spices</p>
+                <div class="cta-buttons">
+                    <a href="#menu" class="btn primary-btn">Explore Menu</a>
+                    <a href="#contact" class="btn secondary-btn">Reserve a Table</a>
+                </div>
+                <div class="decorative-border-bottom"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our Story</h2>
+                    <div class="decorative-divider">
+                        <svg viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0,5 C25,0 25,10 50,5 C75,0 75,10 100,5" fill="none" stroke="#8B4513" stroke-width="1"/>
+                            <circle cx="50" cy="5" r="3" fill="#DA7635"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1614636006346-d3fb453b9901" alt="Traditional Indian village scene" class="village-image">
+                        <div class="image-frame"></div>
+                    </div>
+                    
+                    <div class="about-text">
+                        <h3>Inspired by <span class="highlight">Tradition</span></h3>
+                        <p>Founded in 2005, Mana Oori Ruchulu was born from our passion to bring authentic village flavors to the city. Our recipes have been passed down through generations, preserving the traditional cooking methods that give our dishes their distinctive taste.</p>
+                        
+                        <h3>Our <span class="highlight">Philosophy</span></h3>
+                        <p>We believe in honoring the rich culinary heritage of Indian villages. Every dish we serve embodies the essence of rural India - simple, hearty, and bursting with authentic flavors. We source our ingredients from local farmers, supporting sustainable practices while ensuring the freshest produce for our customers.</p>
+                        
+                        <div class="about-highlights">
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-mortar-pestle"></i>
+                                <h4>Hand-Ground Spices</h4>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-fire-flame-curved"></i>
+                                <h4>Traditional Cooking</h4>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fa-solid fa-leaf"></i>
+                                <h4>Organic Ingredients</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Our Menu</h2>
+                    <div class="decorative-divider">
+                        <svg viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0,5 C25,0 25,10 50,5 C75,0 75,10 100,5" fill="none" stroke="#8B4513" stroke-width="1"/>
+                            <circle cx="50" cy="5" r="3" fill="#DA7635"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="menu-tabs">
+                    <button class="menu-tab active" data-category="vegetarian">
+                        <i class="fa-solid fa-leaf"></i> Vegetarian
+                    </button>
+                    <button class="menu-tab" data-category="non-vegetarian">
+                        <i class="fa-solid fa-drumstick-bite"></i> Non-Vegetarian
+                    </button>
+                    <button class="menu-tab" data-category="breads">
+                        <i class="fa-solid fa-bread-slice"></i> Breads
+                    </button>
+                    <button class="menu-tab" data-category="desserts">
+                        <i class="fa-solid fa-ice-cream"></i> Desserts
+                    </button>
+                </div>
+                
+                <div class="menu-content">
+                    <!-- Vegetarian Menu -->
+                    <div class="menu-category active" id="vegetarian">
+                        <div class="menu-category-header">
+                            <h3>Vegetarian Delights</h3>
+                            <p>Traditional plant-based recipes from Indian villages</p>
+                        </div>
+                        
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Sarson Ka Saag</h4>
+                                    <span class="price">₹320</span>
+                                </div>
+                                <p class="description">Traditional Punjabi preparation of mustard greens, slow-cooked with spices and served with a dollop of white butter</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Panchmel Dal</h4>
+                                    <span class="price">₹280</span>
+                                </div>
+                                <p class="description">Five varieties of lentils slow-cooked with rustic spices and finished with a village-style tempering</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Bharwan Baingan</h4>
+                                    <span class="price">₹295</span>
+                                </div>
+                                <p class="description">Baby eggplants stuffed with a spiced peanut and sesame filling, cooked in a tangy gravy</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Kadhi Pakora</h4>
+                                    <span class="price">₹260</span>
+                                </div>
+                                <p class="description">Gram flour fritters in yogurt-based curry, tempered with cumin and curry leaves</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Aloo Gobhi Matar</h4>
+                                    <span class="price">₹275</span>
+                                </div>
+                                <p class="description">Potatoes, cauliflower and green peas cooked with onions, tomatoes and rustic spices</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Rajasthani Gatta Curry</h4>
+                                    <span class="price">₹285</span>
+                                </div>
+                                <p class="description">Gram flour dumplings simmered in a yogurt-based curry with traditional desert spices</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Non-Vegetarian Menu -->
+                    <div class="menu-category" id="non-vegetarian">
+                        <div class="menu-category-header">
+                            <h3>Non-Vegetarian Specialties</h3>
+                            <p>Rustic meat and poultry dishes with authentic village flavors</p>
+                        </div>
+                        
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Laal Maas</h4>
+                                    <span class="price">₹395</span>
+                                </div>
+                                <p class="description">Fiery Rajasthani mutton curry cooked with mathania red chilies and traditional spices</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Desi Murgh Curry</h4>
+                                    <span class="price">₹365</span>
+                                </div>
+                                <p class="description">Country-style chicken curry cooked in earthen pot with hand-ground spices and fresh tomatoes</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Bhuna Gosht</h4>
+                                    <span class="price">₹425</span>
+                                </div>
+                                <p class="description">Slow-cooked mutton in a thick, spiced gravy, prepared in the traditional bhuna style</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Machli Kalimirch</h4>
+                                    <span class="price">₹375</span>
+                                </div>
+                                <p class="description">Fish fillets cooked with crushed black pepper and tangy tomato gravy</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Tandoori Murgh</h4>
+                                    <span class="price">₹345</span>
+                                </div>
+                                <p class="description">Traditional clay oven-cooked chicken marinated in yogurt and special spice blend</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Egg Curry</h4>
+                                    <span class="price">₹295</span>
+                                </div>
+                                <p class="description">Boiled eggs in an aromatic onion-tomato gravy with village-style spice blend</p>
+                                <span class="spice-level"><i class="fa-solid fa-pepper-hot"></i><i class="fa-solid fa-pepper-hot"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Breads Menu -->
+                    <div class="menu-category" id="breads">
+                        <div class="menu-category-header">
+                            <h3>Traditional Breads</h3>
+                            <p>Handcrafted breads from our village clay tandoor</p>
+                        </div>
+                        
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Makki di Roti</h4>
+                                    <span class="price">₹80</span>
+                                </div>
+                                <p class="description">Traditional Punjabi cornmeal flatbread, hand-pressed and cooked on a clay tawa</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Missi Roti</h4>
+                                    <span class="price">₹90</span>
+                                </div>
+                                <p class="description">Spiced gram flour and wheat bread with fresh fenugreek leaves</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Bajre ki Roti</h4>
+                                    <span class="price">₹85</span>
+                                </div>
+                                <p class="description">Millet flour flatbread, a staple from rural Rajasthan</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Tandoori Roti</h4>
+                                    <span class="price">₹70</span>
+                                </div>
+                                <p class="description">Whole wheat bread baked in clay tandoor</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Butter Naan</h4>
+                                    <span class="price">₹95</span>
+                                </div>
+                                <p class="description">Leavened bread baked in tandoor and brushed with butter</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Garlic Kulcha</h4>
+                                    <span class="price">₹105</span>
+                                </div>
+                                <p class="description">Soft bread stuffed with garlic and herbs, baked in tandoor</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Desserts Menu -->
+                    <div class="menu-category" id="desserts">
+                        <div class="menu-category-header">
+                            <h3>Sweet Finishes</h3>
+                            <p>Traditional desserts prepared with age-old recipes</p>
+                        </div>
+                        
+                        <div class="menu-items">
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Gur ka Halwa</h4>
+                                    <span class="price">₹195</span>
+                                </div>
+                                <p class="description">Wheat pudding made with jaggery, ghee and garnished with nuts</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Moong Dal Halwa</h4>
+                                    <span class="price">₹215</span>
+                                </div>
+                                <p class="description">Slow-cooked yellow lentil pudding with saffron and cardamom</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Malpua with Rabri</h4>
+                                    <span class="price">₹225</span>
+                                </div>
+                                <p class="description">Traditional pancakes dipped in sugar syrup, served with thickened sweetened milk</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Kheer</h4>
+                                    <span class="price">₹185</span>
+                                </div>
+                                <p class="description">Rice pudding cooked with milk, cardamom and topped with pistachios</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Jalebi with Rabri</h4>
+                                    <span class="price">₹205</span>
+                                </div>
+                                <p class="description">Crispy, syrup-soaked sweet spirals served with thickened milk</p>
+                            </div>
+                            
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Kulfi</h4>
+                                    <span class="price">₹175</span>
+                                </div>
+                                <p class="description">Traditional Indian ice cream flavored with cardamom and saffron</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <div class="section-heading">
+                    <h2>Contact Us</h2>
+                    <div class="decorative-divider">
+                        <svg viewBox="0 0 100 10" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0,5 C25,0 25,10 50,5 C75,0 75,10 100,5" fill="none" stroke="#8B4513" stroke-width="1"/>
+                            <circle cx="50" cy="5" r="3" fill="#DA7635"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-detail">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <h3>Our Location</h3>
+                                <p>123 Culinary Street, Foodie District,<br>Mumbai, Maharashtra - 400001</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fa-solid fa-clock"></i>
+                            <div>
+                                <h3>Opening Hours</h3>
+                                <p>Monday - Sunday<br>Lunch: 12:00 PM - 3:30 PM<br>Dinner: 7:00 PM - 11:00 PM</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <h3>Reservations</h3>
+                                <p>+91 98765 43210<br>+91 91234 56789</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <h3>Email Us</h3>
+                                <p>info@manaoori.com<br>reservations@manaoori.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#" aria-label="TripAdvisor"><i class="fa-brands fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <h3>Reserve your table</h3>
+                        <form id="contact-form" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Your Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Your Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Your Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn primary-btn">Reserve Now</button>
+                        </form>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <h3>Find Us Here</h3>
+                    <div id="restaurant-map"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Mana Oori Ruchulu</h2>
+                    <p>Authentic Indian Village Cuisine</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#menu">Menu</a></li>
+
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-newsletter">
+                    <h3>Join Our Newsletter</h3>
+                    <p>Subscribe to receive updates on special events and offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email Address" required>
+                        <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Mana Oori Ruchulu. All Rights Reserved.</p>
+                <div class="footer-policies">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Container -->
+    <div id="lightbox-container" class="lightbox-container">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="lightbox-caption"></div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- Scroll to top button -->
+    <button id="scroll-top" class="scroll-top">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+
+    <!-- Script Sources -->
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="lightbox.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
